@@ -1,0 +1,12 @@
+<div class="form">
+  <h4>{{errorMessage}}</h4>
+
+    <p>
+      {{textarea placeholder="(add blog title)" value=title class="textarea-title"}}
+    </p>
+    <p>
+      {{textarea placeholder="(add blog body)" value=body class="textarea-body"}}
+    </p>
+    <button {{action 'save'}}>Save</button>
+    <button {{action "cancel"}}>Cancel</button>
+</div>

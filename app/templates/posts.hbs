@@ -1,3 +1,14 @@
-<h2>here</h2>
-
-{{outlet}}
+<div class="template-posts">
+  <div class="blog-sidebar">
+    <h2>Posts &nbsp;&nbsp;{{#link-to 'posts.new'}}<small>[NEW]</small>{{/link-to}}</h2>
+    {{#each post in model}}
+    <h3>
+      {{#link-to 'post' post}}<small>[X]</small>{{/link-to}}&nbsp;&nbsp;
+      {{#link-to 'post' post}}{{post.title}}{{/link-to}}
+    </h3>
+    {{/each}}
+  </div>
+  <div class="blog-main">
+    {{outlet}}
+  </div>
+</div>
