@@ -10,15 +10,17 @@ export default Ember.Controller.extend({
     }
   ),
   actions: {
-    save: function() {
+    createPost: function() {
       var title = this.get('title');
       var body = this.get('body');
       var post = this.store.createRecord("post", {title: title, body: body});
-      post.save().then(function () {
-        this.transitionToRoute('posts');
-      }.bind(this));
+      post.save().then(
+        function () {
+          this.transitionToRoute('posts');
+        }.bind(this)
+      );
     },
-    cancel: function() {
+    cancelPost: function() {
       this.transitionToRoute('posts');
       return false;
     }

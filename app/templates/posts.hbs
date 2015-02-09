@@ -1,10 +1,17 @@
 <div class="template-posts">
   <div class="blog-sidebar">
-    <h2>Posts &nbsp;&nbsp;{{#link-to 'posts.new'}}<small>[NEW]</small>{{/link-to}}</h2>
+    <h2>Posts</h2>
+
+    <div class="search">
+      {{input value=search}}<button id="blog-search" {{action 'searchPosts' search}}>Search</button>
+    </div>
+    {{#link-to 'posts.new'}}<small>[NEW POST]</small>{{/link-to}}
     {{#each post in model}}
     <h3>
-      {{#link-to 'post' post}}<small>[X]</small>{{/link-to}}&nbsp;&nbsp;
+      <button {{action 'deletePost' post}}>X</button>
+      <button {{action 'alertPost' post}}>X</button>
       {{#link-to 'post' post}}{{post.title}}{{/link-to}}
+
     </h3>
     {{/each}}
   </div>
