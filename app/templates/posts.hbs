@@ -9,7 +9,6 @@
     {{#each post in model}}
     <h3>
       <button {{action 'deletePost' post}}>X</button>
-      <button {{action 'alertPost' post}}>X</button>
       {{#link-to 'post' post}}{{post.title}}{{/link-to}}
 
     </h3>

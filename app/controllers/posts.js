@@ -7,9 +7,6 @@ export default Ember.Controller.extend({
       post.destroyRecord().then(function() {
         _this.transitionToRoute('posts');
       });
-    },
-    alertPost: function(post) {
-      alert(post.get("title"));
     }
   }
 });
