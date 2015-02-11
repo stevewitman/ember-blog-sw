@@ -1,5 +1,4 @@
-<div class="template-posts-new">
-  <h2>{{model.title}}</h2>
-  <p>{{model.body}}</p>
-  {{#link-to 'post.edit'}}[Edit Post]{{/link-to}}
-</div>
+<h2>{{model.title}}</h2>
+<p>{{model.body}}</p>
+{{#link-to 'post.edit'}}[Edit Post]{{/link-to}} |
+<button {{action 'deletePost' post}}>Delete</button>
